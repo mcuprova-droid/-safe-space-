@@ -9,10 +9,52 @@
 </head>
 <body>
 
+<div class="emergency-burger-wrapper">
+    <button class="burger-tlacitko" aria-label="Menu tísňových linek">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="tisnova-nabidka" id="tisnoveMenu">
+        <h2>Tísňová čísla</h2>
+        <ul class="seznam-linek">
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Evropské číslo</span>
+                <a href="tel:112" class="tlacitko-volat">112</a>
+            </li>
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Hasiči</span>
+                <a href="tel:150" class="tlacitko-volat">150</a>
+            </li>
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Záchranka</span>
+                <a href="tel:155" class="tlacitko-volat">155</a>
+            </li>
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Policie</span>
+                <a href="tel:158" class="tlacitko-volat">158</a>
+            </li>
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Psychická pomoc (Dospělí)</span>
+                <a href="tel:116123" class="tlacitko-volat">116123</a>
+            </li>
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Linka bezpečí (Do 26 let)</span>
+                <a href="tel:116111" class="tlacitko-volat">116111</a>
+            </li>
+            <li class="radek-linky">
+                <span class="nazev-sluzby">Cesta z krize</span>
+                <a href="tel:116006" class="tlacitko-volat">116006</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <nav class="navbar">
     <div class="container nav-flex">
         <a href="#home" class="logo">
-            <img src="logo bez pozadí.png" alt="Safe space">
+            <img src="logo_bez_pozadi.png" alt="Safe space">
         </a>
         <ul class="nav-links">
             <li><a href="#funkce">Funkce</a></li>
@@ -48,16 +90,16 @@
             </article>
 
             <article class="feature-item">
-                <div class="icon-box icon-blue">🌿</div>
-                <h3>Zastav se a dýchej</h3>
-                <p>Jednoduchá cvičení a relaxační zóna pro okamžiky, kdy je toho na tebe moc.</p>
-                <div id="breath-zone" style="display: none;">
-                    <video class="breath-video" autoplay loop muted playsinline>
-                        <source src="interaktivni_prvek.gif.mp4" type="video/mp4">
-                    </video>
-                    <p id="breath-text" style="font-weight: bold; margin-top: 10px;">Nádech...</p>
-                </div>
-                <button id="start-breath" class="btn-peach">Na minutu se zastavit</button>
+               <div class="icon-box icon-blue">🌿</div>
+               <h3>Zastav se a dýchej</h3>
+               <p>Jednoduchá cvičení a relaxační zóna pro okamžiky, kdy je toho na tebe moc.</p>
+    
+               <div id="breath-zone" style="display: none;">
+                   <div id="breath-flower">🌸</div>
+                   <p id="breath-text" style="font-weight: bold; margin-top: 15px;">Nádech...</p>
+               </div>
+    
+               <button id="start-breath" class="btn-peach">Na minutu se zastavit</button>
             </article>
 
             <article class="feature-item">
@@ -65,6 +107,7 @@
                 <h3>Povzbuzení do kapsy</h3>
                 <p>Každodenní zprávy a tipy, které ti připomenou, že v tom nejsi sama.</p>
                 <button class="btn-peach" id="vzkaz-btn">Dnešní vzkaz</button>
+                <p id="vzkaz-text" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; color: #6B4E71; min-height: 24px; transition: opacity 0.5s ease; opacity: 0;"></p>
             </article>
         </div>
     </div>
@@ -82,7 +125,7 @@
     </div>
 </section>
 
- <section class="faq" id="caste_dotazy" style="padding-left: 100px;">
+<section class="faq" id="caste_dotazy" style="padding-left: 100px;">
     <div class="container">
         <h2 class="section-title">Časté dotazy</h2>
         <div class="faq-list">
@@ -94,21 +137,26 @@
                 <button class="faq-question">Musím se registrovat? 👤</button>
                 <div class="faq-answer"><p>Ne, registrace není potřeba.</p></div>
             </div>
-             <div class="faq-item">
+            <div class="faq-item">
                 <button class="faq-question">Co mám dělat, když mi dechová cvičení nepomáhají? 🌿</button>
-                <div class="faq-answer"><p>To se může stát a je to v pořádku.</p>
-                                        </p> V takovém případě doporučujeme sekci „Kontakty“, kde najdeš čísla na odborníky a linky důvěry, kteří jsou tu pro tebe 24/7. </p></div>
-            </div> <div class="faq-item">
+                <div class="faq-answer">
+                    <p>To se může stát a je to v pořádku. V takovém případě doporučujeme sekci „Tísňová čísla“ v pravém horním rohu, kde najdeš čísla na odborníky a linky důvěry, kteří jsou tu pro tebe 24/7.</p>
+                </div>
+            </div> 
+            <div class="faq-item">
                 <button class="faq-question">Je tento web určený i pro kluky? ✨</button>
-                <div class="faq-answer"><p>Určitě! I když je design laděný do jemných barev, psychické zdraví nezná pohlaví.</p> 
-                                           <p> Safe Space je tu pro každého, kdo potřebuje chvíli klidu.</p></div>
-            </div> <div class="faq-item">
+                <div class="faq-answer">
+                    <p>Určitě! I když je design laděný do jemných barev, psychické zdraví nezná pohlaví.</p> 
+                    <p>Safe Space je tu pro každého, kdo potřebuje chvíli klidu.</p>
+                </div>
+            </div> 
+            <div class="faq-item">
                 <button class="faq-question">Kolik stojí používání všech funkcí? 💖</button>
                 <div class="faq-answer"><p>Vše na tomto webu je a vždy bude zdarma. Naším cílem je pomáhat, ne vydělávat.</p></div>
             </div>
         </div>
     </div>
- </section>
+</section>
 
 <div id="journal-overlay" class="overlay">
     <div class="journal-container">
@@ -129,24 +177,28 @@
     </div>
 </div>
 
+<footer class="site-footer">
+    <div style="width: 100%; border-top: 1px solid black; padding: 20px 0; margin-top: 50px; font-family: sans-serif;">
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div style="white-space: nowrap;">
+                <strong>Instagram:</strong> 
+                <a href="https://www.instagram.com/_my_.safe._space_/" target="_blank" style="color: black; text-decoration: underline;">
+                    _my_.safe._space_
+                 </a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <span><strong>Tvůj názor nás zajímá. Pomoz nám Safe Space vylepšit:</strong></span>
+                <a href="https://forms.gle/ohTYtpYNd53UGNxY6" style="border: 1px solid black; padding: 5px 15px; text-decoration: none; color: black; white-space: nowrap;">
+                    Vyplnit dotazník 📝
+                </a>
+            </div>
+        </div>
+        <div style="text-align: center; font-size: 12px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px;">
+            © 2026 Safe Space
+        </div>
+    </div>
+</footer>
+
 <script src="safe_space_2.js"></script>
 </body>
 </html>
-
-<footer class="site-footer">
-    <div class="container footer-flex">
-        <div class="footer-column">
-            <h3>Kontaktuj nás</h3>
-            <p>📱 Instagram: <a href="#">_my_.safe._space_</a></p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Tvůj názor nás zajímá</h3>
-            <p>Pomoz nám Safe Space vylepšit.</p>
-            <a href="ODKAZ_NA_TVUJ_DOTAZNIK" class="btn-dotaznik">Vyplnit dotazník 📝</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 Safe Space – Vše pro tvůj klid.</p>
-    </div>
-</footer>

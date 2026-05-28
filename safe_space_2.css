@@ -354,3 +354,184 @@ h1 {
     background: #e2e4f0;
 }
 
+/* Styl pro samotnou kytičku */
+#breath-flower {
+    font-size: 60px; /* Velikost kytičky */
+    display: inline-block;
+    transition: transform 4s ease-in-out; /* Plynulý přechod trvající 4 sekundy */
+    transform: scale(1);
+}
+
+/* Třída, kterou JavaScriptem přidáme pro efekt zvětšení (nádech) */
+#breath-flower.inhale {
+    transform: scale(1.6); /* Zvětšení o 60% */
+}
+
+/* Styl pro burger tlačítko */
+.burger-tlacitko {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.burger-tlacitko span {
+    width: 30px;
+    height: 3px;
+    background-color: #cc0000; /* Červené čárky */
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* Skrytí menu v základu */
+.tisnova-nabidka {
+    display: none; /* Menu není vidět */
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    padding: 15px;
+    border: 2px solid #cc0000;
+    border-radius: 8px;
+    background-color: #fff5f5;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+/* Třída, kterou JavaScript přidá pro zobrazení menu */
+.tisnova-nabidka.aktivni {
+    display: block;
+}
+
+/* Styly vnitřku menu */
+.seznam-linek { list-style: none; padding: 0; margin: 0; }
+.radek-linky { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #ffe0e0; }
+.nazev-sluzby { font-weight: bold; color: #333; }
+.tlacitko-volat { display: inline-block; background-color: #cc0000; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-weight: bold; }
+.euroalarm { background-color: #e6f0fa; }
+.euroalarm .tlacitko-volat { background-color: #003399; }
+
+/* Kontejner fixovaný vpravo nahoře */
+.emergency-burger-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Zajišťuje, že menu bude nad vším ostatním obsahem */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: Arial, sans-serif;
+}
+
+/* Jemné fialové burger tlačítko */
+.burger-tlacitko {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.burger-tlacitko span {
+    width: 30px;
+    height: 4px;
+    background-color: #7c5cb7; /* Jemná fialová barva linek */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Stylování samotného menu */
+.tisnova-nabidka {
+    display: none; /* V základu skryté */
+    width: 280px;
+    padding: 15px;
+    border: 1px solid #d1c4e9; /* Světle fialový okraj */
+    border-radius: 12px;
+    background-color: #f3e5f5; /* Velmi jemné fialové pozadí */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Třída pro zobrazení (přepínaná pomocí JS) */
+.tisnova-nabidka.aktivni {
+    display: block;
+}
+
+.tisnova-nabidka h2 {
+    color: #4a148c; /* Tmavě fialový nadpis */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.seznam-linek {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.radek-linky {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e1bee7;
+}
+
+.radek-linky:last-child {
+    border-bottom: none;
+}
+
+.nazev-sluzby {
+    font-weight: bold;
+    color: #4a3b63; /* Tmavší tlumená fialová pro text */
+    font-size: 0.95em;
+}
+
+/* Výrazné fialové tlačítko pro zavolání */
+.tlacitko-volat {
+    display: inline-block;
+    background-color: #7c5cb7; /* Střední fialová */
+    color: white;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.tlacitko-volat:hover {
+    background-color: #5e35b1; /* Tmavší fialová při najetí myší */
+}
+
+/* Jemné odlišení evropského čísla 112 */
+.euroalarm {
+    background-color: #eaedea; 
+    border-radius: 6px;
+    padding: 8px 6px;
+}
+
+.obsah {
+    max-width: 1200px;  /* Maximální šířka na počítači */
+    width: 90%;         /* Na mobilu zabere 90 % šířky, takže zůstanou hezké okraje */
+    margin: 0 auto;     /* Klíčový krok: Vycentruje celý blok na střed obrazovky */
+    padding: 20px;      /* Vnitřní odsazení, aby text nebyl nalepený úplně na okrajích */
+}
+
+img {
+    max-width: 100%;    /* Obrázek nikdy nebude širší než obrazovka mobilu */
+    height: auto;       /* Zachová správný poměr stran */
+    display: block;     /* Umožní obrázek správně centrovat */
+    margin: 0 auto;     /* Vycentruje obrázek na střed */
+}
