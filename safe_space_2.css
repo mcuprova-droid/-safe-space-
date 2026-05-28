@@ -69,13 +69,28 @@ body {
     .nav-flex {
         flex-direction: column;
         gap: 15px;
+        align-items: center; /* Vycentruje logo i odkazy na střed jen na mobilu */
     }
     .spacer {
-    display: none;
- }
- .logo, .nav-links {
-    flex: none;
- }
+        display: none; /* Skryje prázdné místo, aby na mobilu nepřekáželo */
+    }
+    .logo {
+        flex: none;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .logo img {
+        height: 100px; /* Zmenšení loga jen na mobilu, aby nezabíralo půlku displeje */
+        width: auto;
+        margin: 0 auto;
+    }
+    .nav-links {
+        flex: none;
+        gap: 20px; /* Zmenší mezeru mezi odkazy na 20px, aby se na mobilu vešly vedle sebe */
+        justify-content: center;
+    }
 }
 .navbar {
     position: absolute; /* Lišta plave nad hero sekcí */
