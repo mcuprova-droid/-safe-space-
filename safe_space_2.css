@@ -550,3 +550,39 @@ img {
     display: block;     /* Umožní obrázek správně centrovat */
     margin: 0 auto;     /* Vycentruje obrázek na střed */
 }
+
+.hero-text-bottom {
+    margin-bottom: 35px; /* Tímto číslem si můžeš mezeru zvětšit nebo zmenšit podle potřeby */
+}
+
+/* Styly pro celou mřížku */
+.feature-grid {
+    display: flex; /* nebo grid, pokud ho používáš */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Styly pro jednotlivé kartičky */
+.feature-item {
+    background: #ffffff; /* nebo vaše barva pozadí */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* jemný stín jako na screenu */
+    
+    /* KLÍČOVÉ VLASTNOSTI PRO ZAROVNÁNÍ TLAČÍTEK: */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* vycentruje ikony, texty i tlačítka na střed */
+}
+
+/* KLÍČOVÉ VLASTNOSTI PRO TLAČÍTKA */
+.feature-item .btn-peach {
+    /* margin-top: auto zajistí, že se tlačítko odlepí od textu 
+       a skočí na samotný spodek kartičky do jedné roviny s ostatními */
+    margin-top: auto; 
+    
+    /* Větší horní odsazení, aby tlačítko nebylo nalepené na textu, 
+       pokud by náhodou texty byly stejně dlouhé */
+    padding-top: 15px; 
+}

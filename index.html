@@ -52,18 +52,32 @@
 </div>
 
 <nav class="navbar">
+
     <div class="container nav-flex">
+
         <a href="#home" class="logo">
+
             <img src="logo_bez_pozadi.png" alt="Safe space">
+
         </a>
+
         <ul class="nav-links">
+
             <li><a href="#funkce">Funkce</a></li>
-            <li><a href="#o_nas" class="nav-about-link">O nás</a></li> 
+
+            <li><a href="#o_nas" class="nav-about-link">O nás</a></li>
+
             <li><a href="#caste_dotazy">Časté dotazy</a></li>
+
         </ul>
+
         <span class="spacer"></span>
+
     </div>
-</nav>
+
+</nav> 
+
+
 
 <section class="hero" id="home">
     <div class="hero-overlay"></div>
@@ -73,7 +87,7 @@
         <div class="container">
             <h1>Nádech. Výdech.<br>Jsi tu správně.</h1>
             <p>Ahoj! Vítej v bezpečném prostoru, kde se můžeš vypsat ze svých pocitů a najít kousek klidu v každém dni.</p> 
-            <p>Ber to tu jako svůj digitální deníček a místo, kde si můžeš oddechnout, když je svět kolem moc hlučný.</p>  
+            <p class="hero-text-bottom">Ber to tu jako svůj digitální deníček a místo, kde si můžeš oddechnout, když je svět kolem moc hlučný.</p>  
             <a href="#funkce" class="btn-peach">Pojď si odpočinout</a>
         </div>
     </div>
@@ -106,11 +120,268 @@
                 <div class="icon-box icon-purple">✨</div>
                 <h3>Povzbuzení do kapsy</h3>
                 <p>Každodenní zprávy a tipy, které ti připomenou, že v tom nejsi sama.</p>
-                <button class="btn-peach" id="vzkaz-btn">Dnešní vzkaz</button>
                 <p id="vzkaz-text" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; color: #6B4E71; min-height: 24px; transition: opacity 0.5s ease; opacity: 0;"></p>
+                
+                <button class="btn-peach" id="vzkaz-btn">Dnešní vzkaz</button>
             </article>
         </div>
     </div>
+</section>
+
+<section id="merch" style="background-color: #ffffff; padding: 60px 0; width: 100%; display: block; clear: both;">
+    
+    <style>
+        /* Tento obal vycentruje MERCH bez ovlivnění zbytku webu */
+        .safe-merch-container {
+            max-width: 1600px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+            box-sizing: border-box !important;
+            text-align: center !important;
+            display: block !important;
+        }
+
+        .merch-main-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .merch-badge {
+            display: inline-block;
+            background-color: #F7E7E4;
+            color: #E27D60;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .merch-main-header h2 {
+            font-size: 2.8rem;
+            color: #4A3E4D;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        .merch-main-header p {
+            color: #888888;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Řada produktů vedle sebe - vycentrovaná */
+        .merch-products-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            gap: 20px !important;
+            justify-content: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 10px 0 !important;
+            margin: 0 auto !important;
+            overflow-x: auto;
+        }
+
+        /* IDEÁLNÍ VELIKOST POLÍČEK: Zvětšeno pro lepší čitelnost */
+        .merch-product-card {
+            background: #ffffff;
+            border: 1px solid #EFEAE6;
+            border-radius: 18px;
+            width: 240px; /* Zvětšená šířka kartičky */
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(226, 125, 96, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .merch-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(226, 125, 96, 0.08);
+            border-color: #E27D60;
+        }
+
+        /* Box na obrázky merche */
+        .merch-card-images {
+            display: flex;
+            width: 100%;
+            height: 180px;
+            background-color: #FAF6F4;
+            overflow: hidden;
+            gap: 1px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Pouze obrázky UVNITŘ MERCHE se dvěma fotkami */
+        .merch-card-images img {
+            flex: 1;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Pouze obrázky UVNITŘ MERCHE s jednou fotkou (kryt, sklenička) - NEOŘÍZNUTÉ */
+        .merch-card-images img.full-width-img {
+            width: 100%;
+            height: 92%;
+            flex: none;
+            object-fit: contain !important; /* Zde se zmenší jen produkt v merche */
+        }
+
+        .merch-card-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .merch-card-body h3 {
+            font-size: 1.15rem;
+            color: #4A3E4D;
+            margin: 0 0 6px 0;
+            font-weight: 600;
+        }
+
+        .merch-desc {
+            color: #7A7A7A;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0 0 15px 0;
+            flex-grow: 1;
+        }
+
+        .merch-card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid #FAF6F4;
+        }
+
+        .merch-card-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #E27D60;
+        }
+    </style>
+
+    <div class="safe-merch-container">
+        
+        <div class="merch-main-header">
+            <span class="merch-badge">Náš merch</span>
+            <h2>Kousek klidu do reálného světa</h2>
+            <p>Vyber si drobnost, která ti udělá radost. Pro objednání stačí kliknout na tlačítko.</p>
+        </div>
+
+        <div class="merch-products-grid">
+            
+            <article class="merch-product-card">
+                <div class="merch-card-images">
+                    <img src="denik_1.jpg" alt="Deník obálka">
+                    <img src="denik_2.jpg" alt="Deník vnitřek">
+                </div>
+                <div class="merch-card-body">
+                    <h3>Bezpečný deník</h3>
+                    <p class="merch-desc">Tvůj prostor pro myšlenky a emoce. Pohled na obálku i vnitřek.</p>
+                    <div class="merch-card-footer">
+                        <span class="merch-card-price">290 Kč</span>
+                        <button class="btn-peach" onclick="objednatProdukt('Bezpečný deník')">Mám zájem</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="merch-product-card">
+                <div class="merch-card-images">
+                    <img src="sklenicka.jpg" alt="Stylová sklenička" class="full-width-img">
+                </div>
+                <div class="merch-card-body">
+                    <h3>Stylová sklenička</h3>
+                    <p class="merch-desc">Ideální parťák na ledovou kávu nebo ranní osvěžující vodu s citronem.</p>
+                    <div class="merch-card-footer">
+                        <span class="merch-card-price">180 Kč</span>
+                        <button class="btn-peach" onclick="objednatProdukt('Stylová sklenička')">Mám zájem</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="merch-product-card">
+                <div class="merch-card-images">
+                    <img src="kryt.jpg" alt="Kryt na mobil" class="full-width-img">
+                </div>
+                <div class="merch-card-body">
+                    <h3>Kryt na mobil</h3>
+                    <p class="merch-desc">Ochranný kryt s naším motivem, který ti připomene klid v každé situaci.</p>
+                    <div class="merch-card-footer">
+                        <span class="merch-card-price">350 Kč</span>
+                        <button class="btn-peach" onclick="objednatProdukt('Kryt na mobil')">Mám zájem</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="merch-product-card">
+                <div class="merch-card-images">
+                    <img src="taska.jpg" alt="Plátěná taška" class="full-width-img">
+                </div>
+                <div class="merch-card-body">
+                    <h3>Plátěná taška</h3>
+                    <p class="merch-desc">Eko taška ze 100% bavlny, která spolehlivě unese všechny nezbytnosti.</p>
+                    <div class="merch-card-footer">
+                        <span class="merch-card-price">190 Kč</span>
+                        <button class="btn-peach" onclick="objednatProdukt('Plátěná taška')">Mám zájem</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="merch-product-card">
+                <div class="merch-card-images">
+                    <img src="tricko_bile_1.jpg" alt="Bílé tričko předek">
+                    <img src="tricko_bile_2.jpg" alt="Bílé tričko zadek">
+                </div>
+                <div class="merch-card-body">
+                    <h3>Bílé tričko</h3>
+                    <p class="merch-desc">Tričko z organické bavlny. Pohled z přední i zadní strany motivu.</p>
+                    <div class="merch-card-footer">
+                        <span class="merch-card-price">390 Kč</span>
+                        <button class="btn-peach" onclick="objednatProdukt('Bílé tričko se vzorem')">Mám zájem</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="merch-product-card">
+                <div class="merch-card-images">
+                    <img src="tricko_ruzove_1.jpg" alt="Růžové tričko předek">
+                    <img src="tricko_ruzove_2.jpg" alt="Růžové tričko zadek">
+                </div>
+                <div class="merch-card-body">
+                    <h3>Růžové tričko</h3>
+                    <p class="merch-desc">Jemná růžová alternativa s originálním oboustranným designem.</p>
+                    <div class="merch-card-footer">
+                        <span class="merch-card-price">390 Kč</span>
+                        <button class="btn-peach" onclick="objednatProdukt('Růžové tričko se vzorem')">Mám zájem</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <script>
+        function objednatProdukt(nazevProduktu) {
+            alert("✨ Skvělá volba! Produkt '" + nazevProduktu + "' byl úspěšně přidán do tvého zájmu. Brzy tě budeme kontaktovat pro dokončení objednávky. ✨");
+        }
+    </script>
 </section>
 
 <section class="about" id="o_nas">
