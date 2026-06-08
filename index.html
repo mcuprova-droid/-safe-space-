@@ -52,32 +52,18 @@
 </div>
 
 <nav class="navbar">
-
     <div class="container nav-flex">
-
         <a href="#home" class="logo">
-
             <img src="logo_bez_pozadi.png" alt="Safe space">
-
         </a>
-
         <ul class="nav-links">
-
             <li><a href="#funkce">Funkce</a></li>
-
             <li><a href="#o_nas" class="nav-about-link">O nás</a></li>
-
             <li><a href="#caste_dotazy">Časté dotazy</a></li>
-
         </ul>
-
         <span class="spacer"></span>
-
     </div>
-
 </nav> 
-
-
 
 <section class="hero" id="home">
     <div class="hero-overlay"></div>
@@ -107,12 +93,10 @@
                <div class="icon-box icon-blue">🌿</div>
                <h3>Zastav se a dýchej</h3>
                <p>Jednoduchá cvičení a relaxační zóna pro okamžiky, kdy je toho na tebe moc.</p>
-    
                <div id="breath-zone" style="display: none;">
                    <div id="breath-flower">🌸</div>
                    <p id="breath-text" style="font-weight: bold; margin-top: 15px;">Nádech...</p>
                </div>
-    
                <button id="start-breath" class="btn-peach">Na minutu se zastavit</button>
             </article>
 
@@ -121,355 +105,10 @@
                 <h3>Povzbuzení do kapsy</h3>
                 <p>Každodenní zprávy a tipy, které ti připomenou, že v tom nejsi sama.</p>
                 <p id="vzkaz-text" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; color: #6B4E71; min-height: 24px; transition: opacity 0.5s ease; opacity: 0;"></p>
-                
                 <button class="btn-peach" id="vzkaz-btn">Dnešní vzkaz</button>
             </article>
         </div>
     </div>
 </section>
 
-<section id="merch" style="background-color: #ffffff; padding: 60px 0; width: 100%; display: block; clear: both;">
-    
-    <style>
-        /* Tento obal vycentruje MERCH bez ovlivnění zbytku webu */
-        .safe-merch-container {
-            max-width: 1600px !important;
-            width: 100% !important;
-            margin: 0 auto !important;
-            padding: 0 20px !important;
-            box-sizing: border-box !important;
-            text-align: center !important;
-            display: block !important;
-        }
-
-        .merch-main-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .merch-badge {
-            display: inline-block;
-            background-color: #F7E7E4;
-            color: #E27D60;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .merch-main-header h2 {
-            font-size: 2.8rem;
-            color: #4A3E4D;
-            margin: 0 0 12px 0;
-            font-weight: 700;
-        }
-
-        .merch-main-header p {
-            color: #888888;
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Řada produktů vedle sebe - vycentrovaná */
-        .merch-products-grid {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            gap: 20px !important;
-            justify-content: center !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            padding: 10px 0 !important;
-            margin: 0 auto !important;
-            overflow-x: auto;
-        }
-
-        /* IDEÁLNÍ VELIKOST POLÍČEK: Zvětšeno pro lepší čitelnost */
-        .merch-product-card {
-            background: #ffffff;
-            border: 1px solid #EFEAE6;
-            border-radius: 18px;
-            width: 240px; /* Zvětšená šířka kartičky */
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(226, 125, 96, 0.02);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .merch-product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(226, 125, 96, 0.08);
-            border-color: #E27D60;
-        }
-
-        /* Box na obrázky merche */
-        .merch-card-images {
-            display: flex;
-            width: 100%;
-            height: 180px;
-            background-color: #FAF6F4;
-            overflow: hidden;
-            gap: 1px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Pouze obrázky UVNITŘ MERCHE se dvěma fotkami */
-        .merch-card-images img {
-            flex: 1;
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Pouze obrázky UVNITŘ MERCHE s jednou fotkou (kryt, sklenička) - NEOŘÍZNUTÉ */
-        .merch-card-images img.full-width-img {
-            width: 100%;
-            height: 92%;
-            flex: none;
-            object-fit: contain !important; /* Zde se zmenší jen produkt v merche */
-        }
-
-        .merch-card-body {
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        .merch-card-body h3 {
-            font-size: 1.15rem;
-            color: #4A3E4D;
-            margin: 0 0 6px 0;
-            font-weight: 600;
-        }
-
-        .merch-desc {
-            color: #7A7A7A;
-            font-size: 0.85rem;
-            line-height: 1.4;
-            margin: 0 0 15px 0;
-            flex-grow: 1;
-        }
-
-        .merch-card-footer {
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 10px;
-            border-top: 1px solid #FAF6F4;
-        }
-
-        .merch-card-price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #E27D60;
-        }
-    </style>
-
-    <div class="safe-merch-container">
-        
-        <div class="merch-main-header">
-            <span class="merch-badge">Náš merch</span>
-            <h2>Kousek klidu do reálného světa</h2>
-            <p>Vyber si drobnost, která ti udělá radost. Pro objednání stačí kliknout na tlačítko.</p>
-        </div>
-
-        <div class="merch-products-grid">
-            
-            <article class="merch-product-card">
-                <div class="merch-card-images">
-                    <img src="denik_1.jpg" alt="Deník obálka">
-                    <img src="denik_2.jpg" alt="Deník vnitřek">
-                </div>
-                <div class="merch-card-body">
-                    <h3>Bezpečný deník</h3>
-                    <p class="merch-desc">Tvůj prostor pro myšlenky a emoce. Pohled na obálku i vnitřek.</p>
-                    <div class="merch-card-footer">
-                        <span class="merch-card-price">290 Kč</span>
-                        <button class="btn-peach" onclick="objednatProdukt('Bezpečný deník')">Mám zájem</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="merch-product-card">
-                <div class="merch-card-images">
-                    <img src="sklenicka.jpg" alt="Stylová sklenička" class="full-width-img">
-                </div>
-                <div class="merch-card-body">
-                    <h3>Stylová sklenička</h3>
-                    <p class="merch-desc">Ideální parťák na ledovou kávu nebo ranní osvěžující vodu s citronem.</p>
-                    <div class="merch-card-footer">
-                        <span class="merch-card-price">180 Kč</span>
-                        <button class="btn-peach" onclick="objednatProdukt('Stylová sklenička')">Mám zájem</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="merch-product-card">
-                <div class="merch-card-images">
-                    <img src="kryt.jpg" alt="Kryt na mobil" class="full-width-img">
-                </div>
-                <div class="merch-card-body">
-                    <h3>Kryt na mobil</h3>
-                    <p class="merch-desc">Ochranný kryt s naším motivem, který ti připomene klid v každé situaci.</p>
-                    <div class="merch-card-footer">
-                        <span class="merch-card-price">350 Kč</span>
-                        <button class="btn-peach" onclick="objednatProdukt('Kryt na mobil')">Mám zájem</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="merch-product-card">
-                <div class="merch-card-images">
-                    <img src="taska.jpg" alt="Plátěná taška" class="full-width-img">
-                </div>
-                <div class="merch-card-body">
-                    <h3>Plátěná taška</h3>
-                    <p class="merch-desc">Eko taška ze 100% bavlny, která spolehlivě unese všechny nezbytnosti.</p>
-                    <div class="merch-card-footer">
-                        <span class="merch-card-price">190 Kč</span>
-                        <button class="btn-peach" onclick="objednatProdukt('Plátěná taška')">Mám zájem</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="merch-product-card">
-                <div class="merch-card-images">
-                    <img src="tricko_bile_1.jpg" alt="Bílé tričko předek">
-                    <img src="tricko_bile_2.jpg" alt="Bílé tričko zadek">
-                </div>
-                <div class="merch-card-body">
-                    <h3>Bílé tričko</h3>
-                    <p class="merch-desc">Tričko z organické bavlny. Pohled z přední i zadní strany motivu.</p>
-                    <div class="merch-card-footer">
-                        <span class="merch-card-price">390 Kč</span>
-                        <button class="btn-peach" onclick="objednatProdukt('Bílé tričko se vzorem')">Mám zájem</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="merch-product-card">
-                <div class="merch-card-images">
-                    <img src="tricko_ruzove_1.jpg" alt="Růžové tričko předek">
-                    <img src="tricko_ruzove_2.jpg" alt="Růžové tričko zadek">
-                </div>
-                <div class="merch-card-body">
-                    <h3>Růžové tričko</h3>
-                    <p class="merch-desc">Jemná růžová alternativa s originálním oboustranným designem.</p>
-                    <div class="merch-card-footer">
-                        <span class="merch-card-price">390 Kč</span>
-                        <button class="btn-peach" onclick="objednatProdukt('Růžové tričko se vzorem')">Mám zájem</button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </div>
-
-    <script>
-        function objednatProdukt(nazevProduktu) {
-            alert("✨ Skvělá volba! Produkt '" + nazevProduktu + "' byl úspěšně přidán do tvého zájmu. Brzy tě budeme kontaktovat pro dokončení objednávky. ✨");
-        }
-    </script>
-</section>
-
-<section class="about" id="o_nas">
-    <div class="container">
-        <div class="about-card">
-            <h2>Kdo za tím stojí</h2>
-            <p>Jsme čtyři kamarádky, které se rozhodly vytvořit místo, kde se nikdo nemusí na nic hrát. Tenhle web jsme naprogramovaly, abychom propojily technologie s péčí o duši.</p>
-            <p>Chceme vám ukázat, že i v digitálním světě se dá najít ticho, porozumění a cesta k vnitřní pohodě.</p>
-            <img src="landing_page_obrazek.png" class="ctyri_kamaradky" alt="Tým Safe Space">
-            <a href="#home" style="display:block; margin-top:20px; color: var(--lavender);">↑ Zpět na začátek</a>
-        </div>
-    </div>
-</section>
-
-<section class="faq" id="caste_dotazy" style="padding-left: 100px;">
-    <div class="container">
-        <h2 class="section-title">Časté dotazy</h2>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question">Jsou moje data u vás v bezpečí? 🔒</button>
-                <div class="faq-answer"><p>Naprosto. Vše zůstává pouze ve tvém prohlížeči.</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Musím se registrovat? 👤</button>
-                <div class="faq-answer"><p>Ne, registrace není potřeba.</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Co mám dělat, když mi dechová cvičení nepomáhají? 🌿</button>
-                <div class="faq-answer">
-                    <p>To se může stát a je to v pořádku. V takovém případě doporučujeme sekci „Tísňová čísla“ v pravém horním rohu, kde najdeš čísla na odborníky a linky důvěry, kteří jsou tu pro tebe 24/7.</p>
-                </div>
-            </div> 
-            <div class="faq-item">
-                <button class="faq-question">Je tento web určený i pro kluky? ✨</button>
-                <div class="faq-answer">
-                    <p>Určitě! I když je design laděný do jemných barev, psychické zdraví nezná pohlaví.</p> 
-                    <p>Safe Space je tu pro každého, kdo potřebuje chvíli klidu.</p>
-                </div>
-            </div> 
-            <div class="faq-item">
-                <button class="faq-question">Kolik stojí používání všech funkcí? 💖</button>
-                <div class="faq-answer"><p>Vše na tomto webu je a vždy bude zdarma. Naším cílem je pomáhat, ne vydělávat.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div id="journal-overlay" class="overlay">
-    <div class="journal-container">
-        <button id="close-journal" class="close-btn">&times; Zavřít</button>
-        <div class="journal-tabs">
-            <button class="tab-btn active" onclick="openTab(event, 'new-entry')">Nový zápis</button>
-            <button class="tab-btn" onclick="openTab(event, 'past-entries')">Minulé zápisky</button>
-        </div>
-        <div id="new-entry" class="tab-content active">
-            <h2>Jak se dnes cítíš?</h2>
-            <textarea id="journal-text" placeholder="Tady je tvůj bezpečný prostor..."></textarea>
-            <button class="btn-peach" onclick="saveEntry()">Uložit do deníčku</button>
-        </div>
-        <div id="past-entries" class="tab-content">
-            <h2>Tvé minulé myšlenky</h2>
-            <div id="entries-list"><p>Zatím tu nejsou žádné zápisky.</p></div>
-        </div>
-    </div>
-</div>
-
-<footer class="site-footer">
-    <div style="width: 100%; border-top: 1px solid black; padding: 20px 0; margin-top: 50px; font-family: sans-serif;">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <div style="white-space: nowrap;">
-                <strong>Instagram:</strong> 
-                <a href="https://www.instagram.com/_my_.safe._space_/" target="_blank" style="color: black; text-decoration: underline;">
-                    _my_.safe._space_
-                 </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <span><strong>Tvůj názor nás zajímá. Pomoz nám Safe Space vylepšit:</strong></span>
-                <a href="https://forms.gle/ohTYtpYNd53UGNxY6" style="border: 1px solid black; padding: 5px 15px; text-decoration: none; color: black; white-space: nowrap;">
-                    Vyplnit dotazník 📝
-                </a>
-            </div>
-        </div>
-        <div style="text-align: center; font-size: 12px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px;">
-            © 2026 Safe Space
-        </div>
-    </div>
-</footer>
-
-<script src="safe_space_2.js"></script>
-</body>
-</html>
+<section id="merch" style="background-color: #ffffff;

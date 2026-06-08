@@ -18,18 +18,20 @@ body {
     overflow-x: hidden;
 }
 
-/* Stylování kontejneru pro logo */
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none; /* Odstraní podtržení odkazu */
+/* --- NAVIGAČNÍ LIŠTA --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 10;
 }
 
-/* Samotný obrázek */
-.logo img {
-    height: 150px;       /* Uprav podle potřeby */
-    width: auto;        
-    display: block;
+.navbar .container { 
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
 .nav-flex {
@@ -40,10 +42,30 @@ body {
     padding: 20px 0px;
 }
 
-.nav-links {
-    list-style: none; /* Odstraní tečky u seznamu */
+/* Stylování loga */
+.logo {
     display: flex;
-    gap: 100px; /* Mezera mezi odkazy */
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    flex: 1;
+}
+
+.logo img {
+    height: 150px;
+    width: auto;        
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 100px;
 }
 
 .nav-links a {
@@ -54,65 +76,15 @@ body {
     transition: 0.3s;
     opacity: 0.8;
 }
- .spacer {
-    flex: 1;
- }
 
 .nav-links a:hover {
     color: var(--lavender);
     opacity: 1;
 }
 
-/* Responzivita: Na mobilu menu schováme nebo upravíme, 
-   aby se nápis a odkazy nepřebíjely */
-@media (max-width: 600px) {
-    .nav-flex {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center; /* Vycentruje logo i odkazy na střed jen na mobilu */
-    }
-    .spacer {
-        display: none; /* Skryje prázdné místo, aby na mobilu nepřekáželo */
-    }
-    .logo {
-        flex: none;
-        display: block;
-        width: auto;
-        text-align: center;
-        margin: 0 auto;
-    }
-    .logo img {
-        height: 100px; /* Zmenšení loga jen na mobilu, aby nezabíralo půlku displeje */
-        width: auto;
-        margin: 0 auto;
-    }
-    .nav-links {
-        flex: none;
-        gap: 20px; /* Zmenší mezeru mezi odkazy na 20px, aby se na mobilu vešly vedle sebe */
-        justify-content: center;
-    }
-}
-.navbar {
-    position: absolute; /* Lišta plave nad hero sekcí */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 10; /* Aby byla lišta nad bloby a textem */
-}
-
-.logo {
+.spacer {
     flex: 1;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 1px;
-    text-transform: lowercase; /* Pro jemnější, moderní vzhled */
 }
-.navbar.container { max-width: 100%; 
-    margin: 0 auto; 
-    padding: 0 20px; }
 
 /* --- HERO SEKCE --- */
 .hero {
@@ -157,6 +129,10 @@ h1 {
     margin-bottom: 20px; 
 }
 
+.hero-text-bottom {
+    margin-bottom: 35px;
+}
+
 /* --- TLAČÍTKA --- */
 .btn-peach {
     background-color: var(--apricot);
@@ -176,15 +152,31 @@ h1 {
 
 /* --- VLASTNOSTI S IKONAMI --- */
 .features { padding: 100px 0; background: #fff; }
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.feature-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 .feature-item {
-    background: #fdfbf7;
+    background: #ffffff;
     padding: 40px;
     border-radius: 40px;
     text-align: center;
     border: 1px solid rgba(0,0,0,0.05);
-    transition: 0.4s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 340px;
+}
+
+.feature-item .btn-peach {
+    margin-top: auto; 
+    padding-top: 15px; 
 }
 
 .icon-box {
@@ -206,24 +198,37 @@ h1 {
     display: none;
     margin-top: 30px;
 }
-.breath-video {
-    width: 200px;
-    border-radius: 50%;
-    box-shadow: 0 0 30px var(--soft-blue);
+
+#breath-flower {
+    font-size: 60px;
+    display: inline-block;
+    transition: transform 4s ease-in-out;
+    transform: scale(1);
+}
+
+#breath-flower.inhale {
+    transform: scale(1.6);
 }
 
 /* --- O NÁS --- */
 .about { background: #fff1e6; padding: 100px 20px; border-radius: 60px; margin: 40px 20px; }
 .about-card { background: #fff; padding: 50px; border-radius: 40px; text-align: center; }
+.ctyri_kamaradky { width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto; }
+
+/* --- FAQ --- */
+.faq {
+    padding: 80px 0;
+    background: #fff;
+}
 
 .faq-question {
     width: 100%;
-    padding: 20px 0; /* Aby to bylo nakraji stejně jako text */
+    padding: 20px 0;
     background: none;
     border: none;
-    outline: none; /* Aby tam nebyl rámeček */
+    outline: none;
     text-align: left;
-    font-size: 1.1rem; /* malilinko větší než ostatní písmena */
+    font-size: 1.1rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     cursor: pointer;
@@ -234,18 +239,22 @@ h1 {
     color: #6B4E71;
 }
 
-.faq {
-    padding: 50px 0;
-    background: #fff;
-    margin-top: 60px; /* Tímto přidáš mezeru mezi "O nás" a "FAQ" */
+.faq-question::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+    color: var(--lavender);
 }
 
-.faq {
-    padding: 80px 0 80px 0; /* Více místa nahoře (120px) než dole (80px) */
-    background: #fff;
-}
 .faq-item.active .faq-question::after {
     transform: rotate(180deg);
+}
+
+.faq-answer {
+    display: none; 
+    padding: 10px 0 20px 0;
+    color: #555;
 }
 
 .faq-answer p {
@@ -253,43 +262,15 @@ h1 {
     color: #666;
 }
 
-/* Skryje odpovědi při načtení stránky */
-.faq-answer {
-    display: none; 
-    padding: 10px 0 20px 0;
-    color: #555;
-}
-
-/* Styl pro šipečku u otázky */
-.faq-question::after {
-    content: '▼'; /* Symbol šipky */
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-    margin-left: 10px;
-    color: var(--lavender);
-}
-
-/* Rotace šipečky, když je otázka aktivní */
-.faq-item.active .faq-question::after {
-    transform: rotate(180deg);
-}
-
-.ctyri_kamaradky { 
-    width: 500px;
-}
-
 /* --- STYL PRO PŘEKRYTÍ (DENÍČEK) --- */
 .overlay {
     display: none; 
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white !important; /* Musí být neprůhledné */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: white !important;
     z-index: 10000; 
     overflow-y: auto;
-    padding: 80px 20px; /* Větší prostor nahoře kvůli tlačítku zavřít */
+    padding: 80px 20px;
 }
 
 .journal-container {
@@ -325,264 +306,110 @@ h1 {
     color: var(--lavender);
 }
 
-.tab-content {
-    display: none; 
-}
-
-.tab-content.active {
-    display: block; 
-}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
 
 #journal-text {
-    width: 100%;
-    height: 350px;
-    margin: 20px 0;
-    padding: 25px;
-    border-radius: 25px;
-    border: 2px solid var(--mist);
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.1rem;
-    outline: none;
-    resize: none;
+    width: 100%; height: 350px; margin: 20px 0; padding: 25px;
+    border-radius: 25px; border: 2px solid var(--mist);
+    font-family: 'Quicksand', sans-serif; font-size: 1.1rem;
+    outline: none; resize: none;
 }
-
-#journal-text:focus {
-    border-color: var(--lavender);
-}
+#journal-text:focus { border-color: var(--lavender); }
 
 .close-btn {
-    position: fixed; /* Změněno na fixed, aby bylo vždy vidět */
-    top: 20px;
-    right: 30px;
-    font-size: 1.2rem;
-    background: var(--mist);
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Quicksand';
-    font-weight: 700;
-    z-index: 10001;
+    position: fixed;
+    top: 20px; right: 30px; font-size: 1.2rem;
+    background: var(--mist); padding: 10px 20px;
+    border-radius: 30px; border: none; cursor: pointer;
+    font-family: 'Quicksand'; font-weight: 700; z-index: 10001;
 }
+.close-btn:hover { background: #e2e4f0; }
 
-.close-btn:hover {
-    background: #e2e4f0;
-}
-
-/* Styl pro samotnou kytičku */
-#breath-flower {
-    font-size: 60px; /* Velikost kytičky */
-    display: inline-block;
-    transition: transform 4s ease-in-out; /* Plynulý přechod trvající 4 sekundy */
-    transform: scale(1);
-}
-
-/* Třída, kterou JavaScriptem přidáme pro efekt zvětšení (nádech) */
-#breath-flower.inhale {
-    transform: scale(1.6); /* Zvětšení o 60% */
-}
-
-/* Styl pro burger tlačítko */
-.burger-tlacitko {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-}
-
-.burger-tlacitko span {
-    width: 30px;
-    height: 3px;
-    background-color: #cc0000; /* Červené čárky */
-    border-radius: 10px;
-    transition: all 0.3s linear;
-}
-
-/* Skrytí menu v základu */
-.tisnova-nabidka {
-    display: none; /* Menu není vidět */
-    font-family: Arial, sans-serif;
-    max-width: 400px;
-    padding: 15px;
-    border: 2px solid #cc0000;
-    border-radius: 8px;
-    background-color: #fff5f5;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-}
-
-/* Třída, kterou JavaScript přidá pro zobrazení menu */
-.tisnova-nabidka.aktivni {
-    display: block;
-}
-
-/* Styly vnitřku menu */
-.seznam-linek { list-style: none; padding: 0; margin: 0; }
-.radek-linky { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #ffe0e0; }
-.nazev-sluzby { font-weight: bold; color: #333; }
-.tlacitko-volat { display: inline-block; background-color: #cc0000; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-weight: bold; }
-.euroalarm { background-color: #e6f0fa; }
-.euroalarm .tlacitko-volat { background-color: #003399; }
-
-/* Kontejner fixovaný vpravo nahoře */
+/* --- EMERGENCY MENU & BURGER --- */
 .emergency-burger-wrapper {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999; /* Zajišťuje, že menu bude nad vším ostatním obsahem */
+    top: 20px; right: 20px;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     font-family: Arial, sans-serif;
 }
 
-/* Jemné fialové burger tlačítko */
 .burger-tlacitko {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-bottom: 10px;
+    width: 30px; height: 24px;
+    background: transparent; border: none;
+    cursor: pointer; padding: 0; margin-bottom: 10px;
 }
 
 .burger-tlacitko span {
-    width: 30px;
-    height: 4px;
-    background-color: #7c5cb7; /* Jemná fialová barva linek */
+    width: 30px; height: 4px;
+    background-color: #7c5cb7;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
-/* Stylování samotného menu */
 .tisnova-nabidka {
-    display: none; /* V základu skryté */
-    width: 280px;
-    padding: 15px;
-    border: 1px solid #d1c4e9; /* Světle fialový okraj */
-    border-radius: 12px;
-    background-color: #f3e5f5; /* Velmi jemné fialové pozadí */
+    display: none;
+    width: 280px; padding: 15px;
+    border: 1px solid #d1c4e9; border-radius: 12px;
+    background-color: #f3e5f5;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Třída pro zobrazení (přepínaná pomocí JS) */
-.tisnova-nabidka.aktivni {
-    display: block;
-}
+.tisnova-nabidka.aktivni { display: block; }
+.tisnova-nabidka h2 { color: #4a148c; text-align: center; margin-top: 0; margin-bottom: 15px; font-size: 1.2em; }
+.seznam-linek { list-style: none; padding: 0; margin: 0; }
+.radek-linky { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e1bee7; }
+.radek-linky:last-child { border-bottom: none; }
+.nazev-sluzby { font-weight: bold; color: #4a3b63; font-size: 0.95em; }
 
-.tisnova-nabidka h2 {
-    color: #4a148c; /* Tmavě fialový nadpis */
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
-
-.seznam-linek {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.radek-linky {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #e1bee7;
-}
-
-.radek-linky:last-child {
-    border-bottom: none;
-}
-
-.nazev-sluzby {
-    font-weight: bold;
-    color: #4a3b63; /* Tmavší tlumená fialová pro text */
-    font-size: 0.95em;
-}
-
-/* Výrazné fialové tlačítko pro zavolání */
 .tlacitko-volat {
-    display: inline-block;
-    background-color: #7c5cb7; /* Střední fialová */
-    color: white;
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9em;
-    transition: background-color 0.2s;
+    display: inline-block; background-color: #7c5cb7; color: white;
+    text-decoration: none; padding: 6px 14px; border-radius: 20px;
+    font-weight: bold; font-size: 0.9em; transition: background-color 0.2s;
 }
+.tlacitko-volat:hover { background-color: #5e35b1; }
 
-.tlacitko-volat:hover {
-    background-color: #5e35b1; /* Tmavší fialová při najetí myší */
-}
+.euroalarm { background-color: #eaedea; border-radius: 6px; padding: 8px 6px; }
 
-/* Jemné odlišení evropského čísla 112 */
-.euroalarm {
-    background-color: #eaedea; 
-    border-radius: 6px;
-    padding: 8px 6px;
-}
+/* Ostatní pomocné globální třídy */
+.obsah { max-width: 1200px; width: 90%; margin: 0 auto; padding: 20px; }
 
-.obsah {
-    max-width: 1200px;  /* Maximální šířka na počítači */
-    width: 90%;         /* Na mobilu zabere 90 % šířky, takže zůstanou hezké okraje */
-    margin: 0 auto;     /* Klíčový krok: Vycentruje celý blok na střed obrazovky */
-    padding: 20px;      /* Vnitřní odsazení, aby text nebyl nalepený úplně na okrajích */
-}
-
-img {
-    max-width: 100%;    /* Obrázek nikdy nebude širší než obrazovka mobilu */
-    height: auto;       /* Zachová správný poměr stran */
-    display: block;     /* Umožní obrázek správně centrovat */
-    margin: 0 auto;     /* Vycentruje obrázek na střed */
-}
-
-.hero-text-bottom {
-    margin-bottom: 35px; /* Tímto číslem si můžeš mezeru zvětšit nebo zmenšit podle potřeby */
-}
-
-/* Styly pro celou mřížku */
-.feature-grid {
-    display: flex; /* nebo grid, pokud ho používáš */
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Styly pro jednotlivé kartičky */
-.feature-item {
-    background: #ffffff; /* nebo vaše barva pozadí */
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* jemný stín jako na screenu */
-    
-    /* KLÍČOVÉ VLASTNOSTI PRO ZAROVNÁNÍ TLAČÍTEK: */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* vycentruje ikony, texty i tlačítka na střed */
-}
-
-/* KLÍČOVÉ VLASTNOSTI PRO TLAČÍTKA */
-.feature-item .btn-peach {
-    /* margin-top: auto zajistí, že se tlačítko odlepí od textu 
-       a skočí na samotný spodek kartičky do jedné roviny s ostatními */
-    margin-top: auto; 
-    
-    /* Větší horní odsazení, aby tlačítko nebylo nalepené na textu, 
-       pokud by náhodou texty byly stejně dlouhé */
-    padding-top: 15px; 
+/* --- RESPONZIVITA (MOBILNÍ MENU A LOGO) --- */
+@media (max-width: 600px) {
+    .nav-flex {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+    .spacer {
+        display: none !important;
+    }
+    .logo {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        flex: none !important;
+        text-align: center !important;
+    }
+    .logo img {
+        display: block !important;
+        height: 100px !important;
+        width: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 0 auto !important;
+    }
+    .nav-links {
+        flex: none !important;
+        gap: 20px !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
 }
